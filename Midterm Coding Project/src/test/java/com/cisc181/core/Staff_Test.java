@@ -7,16 +7,76 @@ import java.util.Calendar;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+import java.util.GregorianCalendar;
+import java.util.regex.*;
+
+import com.cisc181.eNums.eTitle;
+
+import exceptions.PersonException;
 
 public class Staff_Test {
 
-	@BeforeClass
-	public static void setup() {
-	}
-	
-	@Test
-	public void test() {
-		assertEquals(1,1);
-	}	
+	// Create an ArrayList of Staff class
+	private static ArrayList<Staff> staffInfo = new ArrayList<Staff>();
 
+	@BeforeClass
+	public static void data() throws PersonException {
+		// Add five sample Staff instances to the ArrayList with different
+		// salaries.
+		staffInfo.add(new Staff("Marcus", "Tanner", "XD", new GregorianCalendar(1996, 10, 1).getTime(),
+				"275 Haines Street", "123-123-1234", "marc@hotmail.edu", "1 pm to 2 pm", 0, 10000,
+				new GregorianCalendar(1995, 10, 1).getTime(), eTitle.MR));
+		staffInfo.add(new Staff("Cassandra", "Apple", "XD", new GregorianCalendar(1996, 10, 1).getTime(),
+				"275 Haines Street", "123-123-1234", "cass@hotmail.edu", "1 pm to 2 pm", 0, 20000,
+				new GregorianCalendar(1995, 10, 1).getTime(), eTitle.MR));
+		staffInfo.add(new Staff("First", "Name", "Here", new GregorianCalendar(1996, 10, 1).getTime(),
+				"275 Haines Street", "123-123-1234", "first@hotmail.edu", "1 pm to 2 pm", 0, 30000,
+				new GregorianCalendar(1995, 10, 1).getTime(), eTitle.MR));
+		staffInfo.add(new Staff("Ally", "Juggle", "XD", new GregorianCalendar(1996, 10, 1).getTime(),
+				"275 Haines Street", "123-123-1234", "algal@hotmail.edu", "1 pm to 2 pm", 0, 40000,
+				new GregorianCalendar(1995, 10, 1).getTime(), eTitle.MR));
+		staffInfo.add(new Staff("Keith", "Something", "XD", new GregorianCalendar(1996, 10, 1).getTime(),
+				"275 Haines Street", "123-123-1234", "kiethmyboy@hotmail.edu", "1 pm to 2 pm", 0, 50000,
+				new GregorianCalendar(1995, 10, 1).getTime(), eTitle.MR));
+
+	}
+
+	@Test
+	public void tests() throws PersonException {
+
+		// Compute an average of the salaries and prove it with an assertEquals
+		// method
+		assertEquals(
+				(staffInfo.get(0).getSalary() + staffInfo.get(1).getSalary() + staffInfo.get(2).getSalary()
+						+ staffInfo.get(3).getSalary() + staffInfo.get(4).getSalary()) / 5,
+				30000, 0.01);
+
+		// Write a test for Staff with an invalid phone number and invalid DOB.
+		Staff Staff_Test = new Staff("Last", "Name", "Here", new GregorianCalendar(1492, 10, 1).getTime(),
+				"311 Main Street", "12-123-1234", "last@hotmail.edu", "1 pm to 2 pm", 0, 50000,
+				new GregorianCalendar(1995, 10, 1).getTime(), eTitle.MR);
+		
+		String regex = "^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})$";
+		boolean test1 = false;
+		Pattern pattern = Pattern.compile(regex);
+
+		String number = Staff_Test.getPhone();
+		Matcher matcher = pattern.matcher(number);
+
+		if (!matcher.matches()) {
+			test1 = true;
+		}
+		assertEquals(test1, true);
+
+		boolean test2 = false;
+		test2 = false;
+		Calendar current = Calendar.getInstance();
+		current.add(Calendar.YEAR, -100);
+
+		if (Staff_Test.getDOB().before(current.getTime())) {
+			test2 = true;
+		}
+
+		assertEquals(test2, true);
+	}
 }

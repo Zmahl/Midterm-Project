@@ -4,7 +4,7 @@
   router="FAN">  
   <class id="1" language="java" name="com.cisc181.core.Course" project="Midterm Coding Project" 
     file="/Midterm Coding Project/src/main/java/com/cisc181/core/Course.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="222" width="218" x="200" y="96"/>    
+    <position height="222" width="218" x="215" y="45"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -13,7 +13,7 @@
   </class>  
   <class id="2" language="java" name="com.cisc181.core.Enrollment" project="Midterm Coding Project" 
     file="/Midterm Coding Project/src/main/java/com/cisc181/core/Enrollment.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="212" width="151" x="-5" y="70"/>    
+    <position height="212" width="151" x="21" y="77"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -22,7 +22,7 @@
   </class>  
   <class id="3" language="java" name="com.cisc181.core.Section" project="Midterm Coding Project" 
     file="/Midterm Coding Project/src/main/java/com/cisc181/core/Section.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="193" width="152" x="485" y="299"/>    
+    <position height="193" width="152" x="433" y="302"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -31,7 +31,7 @@
   </class>  
   <class id="4" language="java" name="com.cisc181.core.Semester" project="Midterm Coding Project" 
     file="/Midterm Coding Project/src/main/java/com/cisc181/core/Semester.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="168" width="150" x="5" y="331"/>    
+    <position height="168" width="150" x="75" y="343"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

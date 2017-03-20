@@ -25,6 +25,11 @@ public class Enrollment {
 	
 	}
 	
+
+	public double getGrade(){
+		return Grade;
+	}
+	
 	
 	public void setGrade(double grade){
 		Grade = grade;

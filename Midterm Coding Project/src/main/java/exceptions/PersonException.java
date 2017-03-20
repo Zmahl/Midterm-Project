@@ -2,7 +2,7 @@ package exceptions;
 
 import com.cisc181.core.Person;
 
-public class PersonException {
+public class PersonException extends Exception {
 
 	private Person p;
 
